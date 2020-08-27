@@ -107,14 +107,16 @@ public struct QGrid<Data, Content>: View
             if self.isScrollable {
               ScrollView(showsIndicators: self.showScrollIndicators) {
                 self.content(using: geometry)
+                    .padding(.horizontal, self.hPadding)
+                    .padding(.vertical, self.vPadding)
               }
             } else {
               self.content(using: geometry)
+                .padding(.horizontal, self.hPadding)
+                .padding(.vertical, self.vPadding)
             }
           }
       }
-      .padding(.horizontal, self.hPadding)
-      .padding(.vertical, self.vPadding)
     }
   }
   
